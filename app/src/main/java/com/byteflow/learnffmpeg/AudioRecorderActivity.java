@@ -199,15 +199,6 @@ public class AudioRecorderActivity extends AppCompatActivity implements AudioRec
         return true;
     }
 
-    public void updateTransformMatrix(String cameraId) {
-        if (Integer.valueOf(cameraId) == CameraCharacteristics.LENS_FACING_FRONT) {
-            mFFMediaRecorder.setTransformMatrix(90, 0);
-        } else {
-            mFFMediaRecorder.setTransformMatrix(90, 1);
-        }
-
-    }
-
     public static final File getOutFile(final String ext) {
         final File dir = new File(Environment.getExternalStorageDirectory(), RESULT_IMG_DIR);
         Log.d(TAG, "path=" + dir.toString());
