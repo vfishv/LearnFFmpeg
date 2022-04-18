@@ -75,7 +75,6 @@ import java.util.Locale;
 import static com.byteflow.learnffmpeg.media.MediaRecorderContext.IMAGE_FORMAT_I420;
 import static com.byteflow.learnffmpeg.media.MediaRecorderContext.IMAGE_FORMAT_RGBA;
 import static com.byteflow.learnffmpeg.media.MediaRecorderContext.RECORDER_TYPE_AV;
-import static com.byteflow.learnffmpeg.media.MediaRecorderContext.RECORDER_TYPE_SINGLE_VIDEO;
 import static com.byteflow.learnffmpeg.view.RecordedButton.BUTTON_STATE_ONLY_RECORDER;
 
 

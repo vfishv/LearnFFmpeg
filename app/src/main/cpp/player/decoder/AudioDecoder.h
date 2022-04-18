@@ -23,7 +23,6 @@ extern "C" {
 };
 
 #include <render/audio/AudioRender.h>
-#include <SingleAudioRecorder.h>
 #include "Decoder.h"
 #include "DecoderBase.h"
 
