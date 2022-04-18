@@ -11,7 +11,6 @@
 #include <MediaRecorderContext.h>
 #include "util/LogUtil.h"
 #include "jni.h"
-#include "ASanTestCase.h"
 
 extern "C" {
 #include <libavcodec/version.h>
