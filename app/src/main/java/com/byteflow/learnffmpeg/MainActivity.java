@@ -139,37 +139,8 @@ public class MainActivity extends AppCompatActivity {
                 myPreviewSizeViewAdapter.safeNotifyItemChanged(selectIndex);
                 myPreviewSizeViewAdapter.safeNotifyItemChanged(position);
                 mSampleSelectedIndex = position;
-                switch (position) {
-                    case FF_ANATIVE_WINDOWS_EXAMPLE:
-                        startActivity(new Intent(MainActivity.this, NativeMediaPlayerActivity.class));
-                        break;
-                    case FF_OPENGLES_EXAMPLE:
-                        startActivity(new Intent(MainActivity.this, GLMediaPlayerActivity.class));
-                        break;
-                    case FF_OPENGLES_AUDIO_VISUAL_EXAMPLE:
-                        startActivity(new Intent(MainActivity.this, AudioVisualMediaPlayerActivity.class));
-                        break;
-                    case FF_OPENGLES_VR_EXAMPLE:
-                        startActivity(new Intent(MainActivity.this, VRMediaPlayerActivity.class));
-                        break;
-                    case FF_X264_VIDEO_RECORDER:
-                        startActivity(new Intent(MainActivity.this, VideoRecorderActivity.class));
-                        break;
-                    case FF_FDK_AAC_AUDIO_RECORDER:
-                        startActivity(new Intent(MainActivity.this, AudioRecorderActivity.class));
-                        break;
-                    case FF_AV_RECORDER:
-                        startActivity(new Intent(MainActivity.this, AVRecorderActivity.class));
-                        break;
-                    case FF_STREAM_MEDIA_PLAYER:
-                        startActivity(new Intent(MainActivity.this, StreamMediaPlayerActivity.class));
-                        break;
-                    case FF_MEDIACODEC_PLAYER:
-                        startActivity(new Intent(MainActivity.this, FFMediaCodecPlayerActivity.class));
-                        break;
-                        default:
-                            break;
-                }
+
+                startActivity(new Intent(MainActivity.this, AVRecorderActivity.class));
 
                 dialog.cancel();
             }

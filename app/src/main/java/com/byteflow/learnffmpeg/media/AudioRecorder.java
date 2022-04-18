@@ -1,5 +1,6 @@
 package com.byteflow.learnffmpeg.media;
 
+import android.annotation.SuppressLint;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.util.Log;
@@ -16,6 +17,7 @@ public class AudioRecorder extends Thread {
 		this.mRecorderCallback = callback;
 	}
 
+	@SuppressLint("MissingPermission")
 	@Override
 	public void run() {
 

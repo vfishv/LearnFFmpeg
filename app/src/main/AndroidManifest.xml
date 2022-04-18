@@ -25,25 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GLMediaPlayerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".NativeMediaPlayerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AudioVisualMediaPlayerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".VRMediaPlayerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".VideoRecorderActivity"
-            android:theme="@style/AppNoActionBarTheme"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AudioRecorderActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".AVRecorderActivity"
             android:theme="@style/AppNoActionBarTheme"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".StreamMediaPlayerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FFMediaCodecPlayerActivity"
             android:screenOrientation="portrait"/>
 
         <provider
