@@ -3,6 +3,7 @@ package com.byteflow.learnffmpeg.media;
 import android.annotation.SuppressLint;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.util.Log;
 
 public class AudioRecorder extends Thread {
@@ -22,14 +23,14 @@ public class AudioRecorder extends Thread {
 	public void run() {
 
 		final int mMinBufferSize = AudioRecord.getMinBufferSize(DEFAULT_SAMPLE_RATE, DEFAULT_CHANNEL_LAYOUT, DEFAULT_SAMPLE_FORMAT);
-		Log.d(TAG, "run() called mMinBufferSize=" + mMinBufferSize);
+		Log.d(TAG, "mMinBufferSize=" + mMinBufferSize);
 
 		if (AudioRecord.ERROR_BAD_VALUE == mMinBufferSize) {
 			mRecorderCallback.onError("parameters are not supported by the hardware.");
 			return;
 		}
 
-		mAudioRecord = new AudioRecord(android.media.MediaRecorder.AudioSource.MIC, DEFAULT_SAMPLE_RATE, DEFAULT_CHANNEL_LAYOUT, DEFAULT_SAMPLE_FORMAT, mMinBufferSize);
+		mAudioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, DEFAULT_SAMPLE_RATE, DEFAULT_CHANNEL_LAYOUT, DEFAULT_SAMPLE_FORMAT, mMinBufferSize);
 		try {
 			mAudioRecord.startRecording();
 		} catch (IllegalStateException e) {
@@ -41,7 +42,7 @@ public class AudioRecorder extends Thread {
 		try {
 			while (!Thread.currentThread().isInterrupted()) {
 
-				int result = mAudioRecord.read(sampleBuffer, 0, 4096);
+				int result = mAudioRecord.read(sampleBuffer, 0, sampleBuffer.length);
 				if (result > 0) {
 					mRecorderCallback.onAudioData(sampleBuffer, result);
 				}
