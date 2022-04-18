@@ -8,7 +8,6 @@
 
 #include <cstdio>
 #include <cstring>
-#include <render/video/VideoGLRender.h>
 #include <MediaRecorderContext.h>
 #include "util/LogUtil.h"
 #include "jni.h"

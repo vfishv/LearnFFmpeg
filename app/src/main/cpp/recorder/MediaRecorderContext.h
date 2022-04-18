@@ -11,7 +11,6 @@
 
 #include <cstdint>
 #include <jni.h>
-#include "VideoGLRender.h"
 #include "GLCameraRender.h"
 #include "MediaRecorder.h"
 
