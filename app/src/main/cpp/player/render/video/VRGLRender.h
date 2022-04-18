@@ -17,7 +17,6 @@
 #include <vec2.hpp>
 #include <vector>
 #include <render/BaseGLRender.h>
-#include <SingleVideoRecorder.h>
 
 using namespace glm;
 using namespace std;
