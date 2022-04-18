@@ -12,6 +12,8 @@ public abstract class MediaRecorderContext {
 
     private long mNativeContextHandle;
 
+    protected static native String native_GetFFmpegVersion();
+
     protected native void native_CreateContext();
 
     protected native void native_DestroyContext();

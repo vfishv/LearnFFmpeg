@@ -18,7 +18,15 @@ public class FFMediaRecorder extends MediaRecorderContext implements GLSurfaceVi
     private static final String TAG = "CameraRender";
     private GLSurfaceView mGLSurfaceView;
 
+    static {
+        System.loadLibrary("learn-ffmpeg");
+    }
+
     public FFMediaRecorder() {
+    }
+
+    public static String GetFFmpegVersion() {
+        return native_GetFFmpegVersion();
     }
 
     public void init(GLSurfaceView surfaceView) { //for Video
