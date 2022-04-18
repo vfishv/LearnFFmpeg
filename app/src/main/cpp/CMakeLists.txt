@@ -23,8 +23,6 @@ link_directories(
 file(GLOB src-files
         ${CMAKE_SOURCE_DIR}/*.cpp
         ${CMAKE_SOURCE_DIR}/util/*.cpp
-        ${CMAKE_SOURCE_DIR}/common/*.cpp
-        ${CMAKE_SOURCE_DIR}/player/*.cpp
         ${CMAKE_SOURCE_DIR}/recorder/MediaRecorderContext.cpp
         ${CMAKE_SOURCE_DIR}/recorder/GLCameraRender.cpp
         ${CMAKE_SOURCE_DIR}/recorder/MediaRecorder.cpp
