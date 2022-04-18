@@ -115,6 +115,7 @@ public class FFMediaRecorder extends MediaRecorderContext implements GLSurfaceVi
     }
 
     public void setFragShader(int index, String str) {
+        //Log.d(TAG, "setFragShader: " + index);
         native_SetFragShader(index, str);
     }
 
