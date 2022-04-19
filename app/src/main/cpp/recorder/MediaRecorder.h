@@ -89,11 +89,6 @@ public:
     int StopRecord();
 
 private:
-    //启动音频编码线程
-    static void StartAudioEncodeThread(MediaRecorder *recorder);
-    //启动视频编码线程
-    static void StartVideoEncodeThread(MediaRecorder *recorder);
-
     static void StartMediaEncodeThread(MediaRecorder *recorder);
     //分配音频缓冲帧
     AVFrame *AllocAudioFrame(AVSampleFormat sample_fmt, uint64_t channel_layout, int sample_rate, int nb_samples);
@@ -134,10 +129,7 @@ private:
     int              m_EnableVideo = 0;
     int              m_EnableAudio = 0;
     volatile bool    m_Exit = false;
-    //音频编码线程
-    thread          *m_pAudioThread = nullptr;
-    //视频编码线程
-    thread          *m_pVideoThread = nullptr;
+    //音视频编码线程
     thread          *m_pMediaThread = nullptr;
 };
 
