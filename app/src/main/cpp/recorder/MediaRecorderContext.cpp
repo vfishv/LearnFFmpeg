@@ -174,8 +174,45 @@ void MediaRecorderContext::OnPreviewFrame(int format, uint8_t *pBuffer, int widt
 //	lock.unlock();
 
     //NativeImageUtil::DumpNativeImage(&nativeImage, "/sdcard", "camera");
-	//OnGLRenderFrame(this, &nativeImage);
     GLCameraRender::GetInstance()->RenderVideoFrame(&nativeImage);
+/*
+if(false) {
+	////GLCameraRender::RenderVideoFrame
+	if (pBuffer == nullptr)
+		return;
+	NativeImage m_RenderImage;
+	//std::unique_lock<std::mutex> lock(m_Mutex);
+	NativeImage *pImage = &nativeImage;
+	if (pImage->width != m_RenderImage.width || pImage->height != m_RenderImage.height) {
+		if (m_RenderImage.ppPlane[0] != nullptr) {
+			NativeImageUtil::FreeNativeImage(&m_RenderImage);
+		}
+		memset(&m_RenderImage, 0, sizeof(NativeImage));
+		m_RenderImage.format = pImage->format;
+		m_RenderImage.width = pImage->width;
+		m_RenderImage.height = pImage->height;
+		NativeImageUtil::AllocNativeImage(&m_RenderImage);
+	}
+
+	NativeImageUtil::CopyNativeImage(pImage, &m_RenderImage);
+
+	////GLCameraRender::GetRenderFrameFromFBO()
+
+	uint8_t *pBuf = new uint8_t[m_RenderImage.width * m_RenderImage.height * 4];
+	NativeImage nImage = m_RenderImage;
+	nImage.format = IMAGE_FORMAT_RGBA;
+	nImage.width = m_RenderImage.height;
+	nImage.height = m_RenderImage.width;
+	nImage.pLineSize[0] = nImage.width * 4;
+	nImage.ppPlane[0] = pBuf;
+	glReadPixels(0, 0, nImage.width, nImage.height, GL_RGBA, GL_UNSIGNED_BYTE, pBuf);
+	OnGLRenderFrame(this, &nImage);
+	delete[]pBuf;
+}else{
+	OnGLRenderFrame(this, &nativeImage);
+}
+*/
+
 }
 
 void MediaRecorderContext::SetTransformMatrix(float translateX, float translateY, float scaleX, float scaleY, int degree, int mirror)
