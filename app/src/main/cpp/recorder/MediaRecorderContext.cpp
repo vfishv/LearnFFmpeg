@@ -174,6 +174,7 @@ void MediaRecorderContext::OnPreviewFrame(int format, uint8_t *pBuffer, int widt
 //	lock.unlock();
 
     //NativeImageUtil::DumpNativeImage(&nativeImage, "/sdcard", "camera");
+	//OnGLRenderFrame(this, &nativeImage);
     GLCameraRender::GetInstance()->RenderVideoFrame(&nativeImage);
 }
 
