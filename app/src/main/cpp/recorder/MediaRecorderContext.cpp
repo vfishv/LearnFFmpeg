@@ -86,7 +86,7 @@ MediaRecorderContext *MediaRecorderContext::GetContext(JNIEnv *env, jobject inst
 int MediaRecorderContext::Init()
 {
 	GLCameraRender::GetInstance()->Init(0, 0, nullptr);
-	GLCameraRender::GetInstance()->SetRenderCallback(this, OnGLRenderFrame);//nullptr
+	GLCameraRender::GetInstance()->SetRenderCallback(this, OnGLRenderFrame);//nullptr OnGLRenderFrame
 	return 0;
 }
 
