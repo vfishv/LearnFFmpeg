@@ -207,7 +207,7 @@ if(false) {
 	nImage.ppPlane[0] = pBuf;
 	glReadPixels(0, 0, nImage.width, nImage.height, GL_RGBA, GL_UNSIGNED_BYTE, pBuf);
 	OnGLRenderFrame(this, &nImage);
-	delete[]pBuf;
+	delete []pBuf;
 }else{
 	OnGLRenderFrame(this, &nativeImage);
 }
